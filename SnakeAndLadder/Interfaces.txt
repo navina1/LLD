@@ -1,0 +1,64 @@
+INTERFACES
+    1.Game
+        -state(active,paused,scheduled,paused)
+        -activeplayer
+        -numberOfPlayers
+        -maxDuration
+        -winner
+        -play()
+        -pause()
+        -resume()
+        -startCountdown()
+        -moveToNextPosition(diceNumber)
+        -checkWinner()
+        -Map(ladder/snake)
+    2.board(cells)
+        -size
+        -showBoard()
+        -movePiece(diceNumber)
+        cell:
+             -direction
+             -value
+    3.ladder
+        -start & end
+        -style property
+        -generate ladder
+        -addladder()
+        -hasladder(x,y)
+        -nextPosition()
+    4.snake
+        -start & end
+        -style property
+        -generate snake
+        -addSnake()
+        -hasSnake(x,y)
+        -nextPosition()
+    5.dice
+        -Roll dice
+        -Style Property
+    6.players
+        -userInfo
+        -current nextPosition
+        -status(active/inactive)
+        -style Property
+/*********************** */
+Design Patterns
+
+-JS patterns(OOPs,Observer,Factory,Builder)
+-React Js Pattern(Hooks,Presentational Components,HOC,Provider/Context)
+
+/*********************** */
+Components
+
+<Game>
+    <Board>
+        <Cell/>
+    </Board>
+    <Dice/>
+    <Ladder/>
+    <snake/>
+    <player/>
+</Game>
+
+/*********************** */
+

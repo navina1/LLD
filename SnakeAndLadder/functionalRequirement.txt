@@ -1,0 +1,4 @@
+-create board
+-dice,players,snake, ladder
+-dice can roll
+-players motion

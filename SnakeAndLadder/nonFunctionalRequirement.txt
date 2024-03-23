@@ -1,0 +1,19 @@
+-online/offline
+-multiplayer(max players)
+-with timer support
+-Performance
+-Accessibility
+-Platform(desktop/tablet/mobile)
+-responsiveness
+-Security
+-Localization/internationalisation
+-caching/cdn
+-theaming
+-PWA
+-Auth
+-Logging/Monitoring
+-SEO
+-voice support
+-chat support
+-2D/3D
+-CI/CD
