@@ -1,30 +1,59 @@
 
 /******
-1. Game Board:
+1. Snake:
     Properties:
-        Size: The number of cells on the board.
-        Snakes: Positions where the snakes start and end.
-        Ladders: Positions where the ladders start and end.
+        start: start  position of the snake (x, y)
+        end: start  position of the snake (x, y).
+    Methods:
+        getStart:return start position.
+        getEnd:return end position.
 2. Player:
     Properties:
         Name: Player's name.
         Position: Current position on the board.
     Methods:
         Move: Move the player based on the dice roll.
+1. Ladder:
+    Properties:
+        start: start  position of the ladder (x, y)
+        end: start  position of the ladder (x, y).
+    Methods:
+        getStart:return start position.
+        getEnd:return end position.
 3. Dice:
     Properties:
         Sides: Number of sides on the dice (usually 6).
-4. Game Engine:
+4.SnakeAndLadderBoard:
+    Represents the game board in a Snake and Ladder game.
+    Properties
+        size:The number of cells on the board.
+        snakes:Array to store the positions where the snakes start and end.
+        ladders:Array to store the positions where the ladders start and end.
+        playerPieces:Map to store the current positions of players on the board.
+    Method:
+        getPlayerPieces:Get the map of player pieces representing the current positions
+                        of players on the board.
+        setPlayerPieces:Set the map of player pieces representing the current positions
+                        of players on the board.
+        setLadders:
+        getLadders:
+        getSnakes:
+        setSnakes:
+5. SnakeAndLadderService:
     Properties:
         Players: List of players in the game.
         Board: Instance of the game board.
-        CurrentPlayer: Player whose turn it is.
     Methods:
-        RollDice: Simulate rolling the dice.
+        setPlayers:Initializes the players of the game, assigns their initial positions.
+        setSnakes:Sets the positions of the snakes on the game board.
+        setLadders:Sets the positions of the ladders on the game board.
+        getNewPositionAfterGoingThroughSnakesAndLadders:Calculates the new position after 
+                                                        rolling the dice.
+
+        startGame:
         MovePlayer: Move the current player based on the dice roll.
-        CheckForSnakesAndLadders: Check if the player landed on a snake or ladder.
         CheckForWin: Check if any player has won the game.
-        NextTurn: Move to the next player's turn.
+        isGameCompleted:Checks if the game is completed.
 ****/
 
 class Player {
