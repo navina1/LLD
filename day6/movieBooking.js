@@ -50,7 +50,7 @@ class Screen {
     releaseSeats(blockedSeatNames) {
         for (let seatName of blockedSeatNames) {
             const seat = this.seats.find((seat) => seat.name === seatName);
-            if (seat) seat.unbook();
+            if (seat) seat.unBook();
             else {
                 console.log(`Selected seat - ${seatName} is not available`);
             }
