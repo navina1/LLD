@@ -10,7 +10,11 @@ Non - Functional Requirements
 Only one kind of room is available
 One room can have maximum 2 guests
 */
-
+class User{
+    constructor(name){
+        this.name=name;
+    }
+}
 class Room {
     constructor(number) {
         this.number = number
@@ -67,7 +71,7 @@ class Hotel {
         //console.log(checkIn,checkOut)
         for(let i=0; i< this.rooms.length; i++) {
             if(this.rooms[i].isValid(checkIn, checkOut)) {
-                this.rooms[i].bookRoom(custName, checkIn, checkOut)
+                this.rooms[i].bookRoom(custName.name, checkIn, checkOut)
                 console.log(`Room ${i+1} booked from ${checkIn} to ${checkOut}`)
                 return
             } 
@@ -85,7 +89,7 @@ class Hotel {
     }
     cancelBooking(custName,checkIn,checkOut){
         for(let i=0;i<this.rooms.length;i++){
-            let booking=this.rooms[i].bookings.filter(x=> x.customer != custName && x.checkIn !== checkIn && x.checkOut !== checkOut )
+            let booking=this.rooms[i].bookings.filter(x=> x.customer != custName.name && x.checkIn !== checkIn && x.checkOut !== checkOut )
             if(booking.length !== this.rooms[i].bookings.length){
                 this.rooms[i].bookings=[...booking];
                 console.log("Booking is cancelled");
@@ -103,9 +107,12 @@ hotel.addRoom(3);
 hotel.addRoom(4);  
 hotel.addRoom(5);        
 console.log(hotel.rooms.length);
-hotel.bookHotelRoom("John","12-2-2024","16-2-2024");
-hotel.bookHotelRoom("Jane","13-2-2024","17-2-2024");
-hotel.bookHotelRoom("Tom","14-2-2024","18-2-2024");
+const John=new User("john");
+const Jane=new User("Jane");
+const Tom=new User("Tom");
+hotel.bookHotelRoom(John,"12-2-2024","16-2-2024");
+hotel.bookHotelRoom(Jane,"13-2-2024","17-2-2024");
+hotel.bookHotelRoom(Tom,"14-2-2024","18-2-2024");
 hotel.showEmptyRooms("1-1-2024","23-3-2024")
-hotel.cancelBooking("John","12-2-2024","16-2-2024");
+hotel.cancelBooking(John,"12-2-2024","16-2-2024");
 hotel.showEmptyRooms("1-1-2024","23-3-2024")
